@@ -2,14 +2,15 @@ public class RandomWalker
 {
     public static void main(String[] args)
     {
-        double random = Math.random();
+        double random = 0;
         int x = 0;
         int y = 0;
-        int distance = 0;
+        float distance = 0;
         int moves = 0;
 
         while (distance < Integer.parseInt(args[0]))
         {
+            System.out.println("(" + x + ", " + y+ ")");
             random = Math.random();
             if (random <= 0.25)
             {
@@ -25,9 +26,7 @@ public class RandomWalker
                 y -= 1;
             }
 
-            System.out.println("(" + x + ", " + y+ ")");
-
-            distance = x + y;
+            distance = Math.abs(x) + Math.abs(y);
             moves += 1;
         }
         System.out.println("steps = " + moves);

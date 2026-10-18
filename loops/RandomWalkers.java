@@ -8,13 +8,14 @@ public class RandomWalkers
         int y = 0;
         int total = 0;
         int distance = 0;
-        int random = 0;
+        double random = 0;
+        float res = 0;
 
-        for (int i = 0, i <= trials, i++)
+        for (int i = 0; i <= trials; i++)
         {
             while (distance < r)
             {
-                random = Math.random()
+                random = Math.random();
                 if (random <= 0.25)
                 {
                     x += 1;
@@ -28,7 +29,12 @@ public class RandomWalkers
                 {
                     y -= 1;
                 }
+                distance = Math.abs(x) + Math.abs(y);
+                total += 1;
             }
-        }
+            distance = 0;
+            x = 0;
+            y = 0;
+        }System.out.println("average number of steps = " + (double) total/trials);
     }
 }
