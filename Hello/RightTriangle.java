@@ -1,4 +1,4 @@
-public class RightTringle{
+public class RightTriangle{
     public static void main(String[] args){
         if (args.length!=3){
             System.out.println("Provide exactly 3 numbers");

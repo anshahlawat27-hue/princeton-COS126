@@ -9,8 +9,16 @@ public class GreatCircle{
             double x2 = Double.parseDouble(args[2]);
             double y2 = Double.parseDouble(args[3]);
 
-            System.out.println(x1+x2+y1+y2);
+            double A = Math.toRadians((x2-x1)/2);
+            double B= Math.toRadians(x1);
+            double C= Math.toRadians(x2);
+            double D= Math.toRadians((y2-y1)/2);
 
+            double inside=Math.pow(Math.sin(A), 2)+Math.cos(B)*Math.cos(C)*Math.pow(Math.sin(D), 2);
+            inside= Math.pow(inside, 0.5);
+            double total= 2*6371*Math.asin(inside);
+            System.out.println(total);
         }
+
     }
 }
